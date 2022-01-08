@@ -16,6 +16,7 @@ def q_learning(env: gym.Env,
     action_space_size = env.action_space.n
     Q = np.zeros((state_space_size, action_space_size))
     history = []
+    print('_____________________Training________________________')
 
     for episode in range(episodes):
         state = env.reset()
@@ -39,5 +40,8 @@ def q_learning(env: gym.Env,
 
         exploration_rate = min_exploration + (max_exploration - min_exploration) * np.exp(-exploration_decay * episode)
         history.append(curr_rewards)
+        if episode % 2000 == 0:
+            print('Episode: ', episode)
 
+    print('____________________Training_Ended____________________')
     return Q, history
