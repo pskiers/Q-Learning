@@ -12,6 +12,7 @@ def q_learning(env: gym.Env,
                exploration_decay=0,
                max_exploration=1,
                min_exploration=0):
+
     state_space_size = env.observation_space.n
     action_space_size = env.action_space.n
     Q = np.zeros((state_space_size, action_space_size))

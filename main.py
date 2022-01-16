@@ -6,14 +6,14 @@ from matplotlib import pyplot as plt
 
 def main():
     env = gym.make('FrozenLake-v1')
-    episodes = 80000
+    episodes = 20000
     max_steps = 100
-    learning_rate = 0.15
+    learning_rate = 0.2
     discount_rate = 0.99
     exploration_rate = 1
-    exploration_decay = 0.0001
+    exploration_decay = 0.001
     max_exploration = 1
-    min_exploration = 0.001
+    min_exploration = 0.0001
 
     q, history = q_learning(
         env=env,
